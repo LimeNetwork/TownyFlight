@@ -1,11 +1,11 @@
 package com.gmail.llmdlio.townyflight.listeners;
 
+import me.earthme.luminol.api.entity.EntityTeleportAsyncEvent;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerTeleportEvent;
 import org.bukkit.event.player.PlayerTeleportEvent.TeleportCause;
 
 import com.gmail.llmdlio.townyflight.TownyFlightAPI;
@@ -15,14 +15,15 @@ import com.palmergames.bukkit.towny.object.Resident;
 public class PlayerTeleportListener implements Listener {
 
 	@EventHandler(priority = EventPriority.MONITOR)
-	private void playerTeleports(PlayerTeleportEvent event) {
-		if (!aTeleportCauseThatMatters(event.getCause()))
+	private void playerTeleports(EntityTeleportAsyncEvent event) {
+		if (!(event.getEntity() instanceof Player player)) return;
+
+		if (!aTeleportCauseThatMatters(event.getTeleportCause()))
 			return;
 
-		Player player = event.getPlayer();
-		if (player.hasPermission("townyflight.bypass") 
+		if (player.hasPermission("townyflight.bypass")
 				|| !player.getAllowFlight()
-				|| flightAllowedDestination(player, event.getTo())) {
+				|| flightAllowedDestination(player, event.getDestination())) {
 			return;
 		}
 

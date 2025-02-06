@@ -22,8 +22,8 @@
 				<version>3.11.0</version>
 				<configuration>
 					<release>8</release>
-					<source>${java.version}</source>
-					<target>${java.version}</target>
+					<source>16</source>
+					<target>16</target>
 					<compilerArgs>
 						<arg>-Xplugin:jabel</arg>
 					</compilerArgs>
@@ -61,6 +61,12 @@
 			<artifactId>spigot-api</artifactId>
 			<version>1.19.4-R0.1-SNAPSHOT</version>
 			<type>jar</type>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>me.earthme.luminol</groupId>
+			<artifactId>luminol-api</artifactId>
+			<version>1.21.4-R0.1-SNAPSHOT</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
