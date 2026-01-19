@@ -6,7 +6,6 @@ api-version: ${project.bukkitAPIVersion}
 depend: [Towny]
 softdepend: [SiegeWar]
 prefix: TownyFlight
-folia-supported: true
 
 commands:
   tfly:
@@ -30,6 +29,9 @@ permissions:
   townyflight.command.tfly.town:
     description: User is able to use /tfly town command.
     default: op
+  townyflight.command.town.toggle.flight:
+    description: Mayors can toggle flight on and off for their town.
+    default: op
   townyflight.bypass:
     description: Bypass permission node for admins to not have their flight disabled while they travel the server.
     default: op
@@ -47,4 +49,5 @@ permissions:
     default: op
   townyflight.wilderness:
     description: Allows players to use /townyflight in the wilderness.
+
     default: op

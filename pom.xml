@@ -4,14 +4,14 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.gmail.llmdlio</groupId>
 	<artifactId>TownyFlight</artifactId>
-	<version>1.13.0</version>
+	<version>1.14.1</version>
 	<name>TownyFlight</name>
 	<description>A flight plugin for Towny servers.</description>
 	<properties>
 		<java.version>21</java.version>
-		<project.bukkitAPIVersion>1.16</project.bukkitAPIVersion>
+		<project.bukkitAPIVersion>1.19</project.bukkitAPIVersion>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<towny.version>0.100.3.0</towny.version>
+		<towny.version>0.101.2.5</towny.version>
 	</properties>
 	<build>
 		<defaultGoal>clean package</defaultGoal>
@@ -19,11 +19,11 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.13.0</version>
+				<version>3.11.0</version>
 				<configuration>
-					<release>21</release>
-					<source>21</source>
-					<target>21</target>
+					<release>${java.version}</release>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -38,10 +38,6 @@
 		<repository>
 			<id>jitpack.io</id>
 			<url>https://jitpack.io</url>
-		</repository>
-		<repository>
-			<id>spigot-repo</id>
-			<url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
 		</repository>
 		<repository>
 			<id>papermc</id>
@@ -65,8 +61,7 @@
 		<dependency>
 			<groupId>io.papermc.paper</groupId>
 			<artifactId>paper-api</artifactId>
-			<version>1.21.4-R0.1-SNAPSHOT</version>
-			<type>jar</type>
+			<version>1.21.8-R0.1-SNAPSHOT</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
