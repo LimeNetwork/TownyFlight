@@ -15,6 +15,7 @@ public class Settings {
 	public static Boolean disableCombatPrevention;
 	public static Boolean disableDuringWar;
 	public static Boolean showPermissionInMessage;
+	public static Boolean showTempFlightTimeRemainingInActionBar; 
 	public static Boolean siegeWarFound;
 	public static MessageLocation messageLocation;
 	public static Boolean returnToTownMessageAppearsInTitle;
@@ -36,6 +37,7 @@ public class Settings {
 		disableCombatPrevention = Boolean.valueOf(getOption("disable_Combat_Prevention"));
 		showPermissionInMessage = Boolean.valueOf(getOption("show_Permission_After_No_Permission_Message"));
 		flightDisableTimer = Integer.valueOf(getOption("flight_Disable_Timer"));
+		showTempFlightTimeRemainingInActionBar = Boolean.valueOf(getOption("show_tempflight_time_remaining_in_actionbar"));
 		allowedTempFlightAreas = allowedTempFlightAreas();
 		messageLocation = getMessageLocation();
 		returnToTownMessageAppearsInTitle = Boolean.valueOf(getOption("returnToAllowedArea_appears_in_title_message_override"));
@@ -66,6 +68,7 @@ public class Settings {
 		lang.put("tempFlightGrantedToPlayer", getString("tempFlightGrantedToPlayer"));
 		lang.put("youHaveReceivedTempFlight", getString("youHaveReceivedTempFlight"));
 		lang.put("yourTempFlightHasExpired", getString("yourTempFlightHasExpired"));
+		lang.put("tempFlightTimeRemainging", getString("tempFlightTimeRemainging"));
 	}
 
 	public static String getLangString(String languageString) {
